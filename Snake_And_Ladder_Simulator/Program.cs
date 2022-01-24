@@ -11,6 +11,8 @@ namespace Snake_And_Ladder_Simulator
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake and Ladder Simulator program \n");
+            SnakeAndLadder player = new SnakeAndLadder();
+            player.StartPosition();
             Console.ReadLine();
         }
     }
