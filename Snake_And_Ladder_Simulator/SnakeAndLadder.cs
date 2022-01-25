@@ -9,7 +9,7 @@ namespace Snake_And_Ladder_Simulator
     internal class SnakeAndLadder
     {
         public const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WINNING_POSITION = 100;
-        public int player_Position = 0, DiceRoll;
+        public int player_Position = 0, DiceRoll, DiceCount=0;
         public void PlaySnakeAndLadder()
         {
             Console.WriteLine("Game starts now...");
@@ -19,7 +19,8 @@ namespace Snake_And_Ladder_Simulator
             while(player_Position < WINNING_POSITION)
             {
                 DiceRoll = random.Next(1, 7);
-                Console.WriteLine("\n Player gets Dice Number: " + DiceRoll);
+                DiceCount++;
+                Console.WriteLine("\nDiceCount: {0} \nPlayer gets Dice Number: {1}",DiceCount, DiceRoll);
 
                 switch (random.Next(0, 3))
                 {
@@ -46,7 +47,8 @@ namespace Snake_And_Ladder_Simulator
                 }
 
             }
-            Console.WriteLine("\n Congratulations you Won");
+            Console.WriteLine("\n Congratulations you Won \n");
+            Console.WriteLine("Number of times the Dice was played to win the game: " + DiceCount);
         }
 
     }
